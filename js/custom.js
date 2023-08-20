@@ -392,10 +392,10 @@
 	     responsive:{
 
 	        0:{
-	          items:3
+	          items:2
 	        },
 	        600:{
-	          items:5
+	          items:3
 	        },
 	        1024:{
 	          items:5
@@ -407,6 +407,31 @@
 	      
 	});
 
+	$('.slide-team').owlCarousel({
+		loop: true,
+		autoplay:true,
+		smartSpeed:1500,
+		autoplayTimeout:2000,
+		autoplayHoverPause:true,
+		margin: 30,
+		dots: true,
+		responsive:{
+
+		   0:{
+			 items:1
+		   },
+		   600:{
+			 items:2
+		   },
+		   1024:{
+			 items:2
+		   },
+		   1200:{
+			 items:4
+		   }
+		 }
+		 
+   });
     // History Timeline
 	//--------------------------------------------
 	$('.history-timeline').owlCarousel({
@@ -575,12 +600,21 @@
 
 	  $('.scroll-page').click(function(){
 			var id = $(this).attr('href');
-			var off = 86;
-			if(id === '#about') {
-				off = 170;
-			}
-			$("html, body").animate({ scrollTop: $(id).offset().top - off }, 600);
+			animate_scroll(id);
 			return false;
 	  });
+
+	  function animate_scroll(id) {
+		
+		var off = 86;
+		if(id === '#about') {
+			off = 170;
+		}
+		$("html, body").animate({ scrollTop: $(id).offset().top - off }, 600);
+	  }
+
+	  animate_scroll(window.location.hash);
+	  
+	  
 
 })(jQuery);

@@ -39,7 +39,6 @@
 	
 	<!-- Favicon Icon -->
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
-  
 </head>
 <body id="top">
 	<!-- Start Back to top
@@ -356,7 +355,22 @@
 	<script src="js/wow.js"></script> 
 	<script src="js/jquery.fancybox.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/YouTubePopUp.jquery.js"></script>
+	<script>
+		function animateHamburger() {
+		  $('#hamburger-button').toggleClass('open');
+		/*animation from burger to X*/
+		}
+
+		function slideMenu(){
+		  $('.burger-nav').toggleClass('open');
+		  /*animation for slide down menu*/
+		}
+		$('#hamburger-button').click(function(){
+		  console.log('trying');
+		  animateHamburger();
+		  slideMenu(); /*attaching click handler to the burger button*/
+		});
+	</script>
 	<script src="js/custom.js"></script>
   </body>
 </html>

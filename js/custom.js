@@ -604,13 +604,14 @@
 			return false;
 	  });
 
-	  function animate_scroll(id) {
-		
-		var off = 86;
-		if(id === '#about') {
-			off = 170;
+	  function animate_scroll(id = null) {
+		if(id) {
+			var off = 86;
+			if(id === '#about') {
+				off = 170;
+			}
+			$("html, body").animate({ scrollTop: $(id).offset().top - off }, 600);
 		}
-		$("html, body").animate({ scrollTop: $(id).offset().top - off }, 600);
 	  }
 
 	  animate_scroll(window.location.hash);

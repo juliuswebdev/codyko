@@ -79,7 +79,10 @@
 }
 
 .texh .owl-item svg {
-    filter: grayscale(100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 60px;
     margin: 0 auto;
     opacity: .9;
@@ -87,8 +90,7 @@
 }
 
 .texh .owl-item:hover svg {
-    filter: grayscale(0);
-    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
     transition: all 1s;
     cursor: pointer;
 }
